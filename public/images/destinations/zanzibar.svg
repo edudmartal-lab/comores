@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Zanzibar</title>
+  <desc id="desc">Illustration placeholder de plage, palmier et océan turquoise.</desc>
+  <rect width="1200" height="800" fill="#00B6C7"/>
+  <path d="M0 500c220-72 430-68 650 0 210 65 360 52 550-37v337H0Z" fill="#0D47A1" opacity=".65"/>
+  <path d="M0 625c295-40 505-25 720 35 170 47 310 35 480-35v175H0Z" fill="#F7F7F2"/>
+  <path d="M310 550c40-115 36-200 5-255M315 295c-52-7-99 13-144 60M320 295c55-45 115-58 182-42M322 298c-18-75-65-118-143-132" stroke="#0B8F66" stroke-width="20" stroke-linecap="round"/>
+  <path d="M135 260c220-64 420-55 645 4 140 37 250 35 335-4" fill="none" stroke="#F7F7F2" stroke-width="15" stroke-linecap="round" opacity=".78"/>
+</svg>

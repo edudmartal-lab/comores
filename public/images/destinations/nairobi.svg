@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Nairobi</title>
+  <desc id="desc">Illustration placeholder de skyline et connexion aérienne.</desc>
+  <rect width="1200" height="800" fill="#ECEFF3"/>
+  <rect y="470" width="1200" height="330" fill="#0B8F66"/>
+  <path d="M125 470h100V330h80v140h90V260h95v210h85V350h70v120h105V290h95v180h90V385h70v85h75v330H125Z" fill="#0D47A1"/>
+  <path d="M120 230c250-80 480-85 720-8 135 43 225 42 310 5" fill="none" stroke="#00B6C7" stroke-width="18" stroke-linecap="round"/>
+  <path d="M875 205l72 17-53 18-20 52-17-45-50-11 45-18 23-13z" fill="#0B8F66"/>
+  <path d="M0 640c240-68 430-55 640 10 210 65 340 45 560-55v205H0Z" fill="#F7F7F2" opacity=".84"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Comores</title>
+  <desc id="desc">Illustration placeholder avec mer turquoise, relief vert et courbes aériennes.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00B6C7"/>
+      <stop offset="0.55" stop-color="#0D47A1"/>
+      <stop offset="1" stop-color="#0B8F66"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#sky)"/>
+  <circle cx="1000" cy="120" r="150" fill="#F7F7F2" opacity=".25"/>
+  <path d="M0 480C180 370 330 390 500 450c170 60 340 50 700-120v470H0Z" fill="#0B8F66" opacity=".85"/>
+  <path d="M0 560c240-70 430-60 610-5 214 65 364 45 590-70v315H0Z" fill="#00B6C7" opacity=".9"/>
+  <path d="M0 640c270-50 430-15 610 30 210 53 370 36 590-45v175H0Z" fill="#F7F7F2" opacity=".92"/>
+  <path d="M95 275c210-70 410-83 680-34 150 27 252 25 330-7" fill="none" stroke="#F7F7F2" stroke-width="16" stroke-linecap="round" opacity=".82"/>
+  <path d="M830 214l76 18-56 19-21 55-18-47-52-12 46-18 25-15z" fill="#F7F7F2"/>
+</svg>

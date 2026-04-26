@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Djeddah</title>
+  <desc id="desc">Illustration placeholder sobre pour Omra et Hajj.</desc>
+  <rect width="1200" height="800" fill="#0D47A1"/>
+  <path d="M0 560c250-80 455-70 680-4 190 56 335 45 520-38v282H0Z" fill="#0B8F66"/>
+  <path d="M430 535h340V355H430z" fill="#F7F7F2"/>
+  <path d="M465 355c42-82 228-82 270 0" fill="#F7F7F2"/>
+  <path d="M520 535v-88a80 80 0 0 1 160 0v88" fill="#0D47A1"/>
+  <path d="M385 535V300M815 535V300M375 308h20M805 308h20" stroke="#F7F7F2" stroke-width="18" stroke-linecap="round"/>
+  <path d="M105 230c240-80 455-85 690-20 145 40 255 38 335-2" fill="none" stroke="#00B6C7" stroke-width="16" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Dubaï</title>
+  <desc id="desc">Illustration placeholder de skyline moderne et ciel bleu.</desc>
+  <rect width="1200" height="800" fill="#0D47A1"/>
+  <path d="M0 590c255-80 450-70 650-10 195 58 330 48 550-45v265H0Z" fill="#00B6C7"/>
+  <path d="M130 590h90V405h80v185h105V325h100v265h85V185h95v405h110V365h92v225h105V440h78v150h90v210H130Z" fill="#F7F7F2"/>
+  <path d="M635 185c20 88 24 170 0 250" stroke="#0B8F66" stroke-width="16" stroke-linecap="round"/>
+  <path d="M90 270c250-90 500-95 750-20 130 39 220 40 305 5" fill="none" stroke="#F7F7F2" stroke-width="16" stroke-linecap="round" opacity=".78"/>
+</svg>

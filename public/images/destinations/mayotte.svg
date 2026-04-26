@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mayotte</title>
+  <desc id="desc">Illustration placeholder de lagon et île de l'océan Indien.</desc>
+  <rect width="1200" height="800" fill="#00B6C7"/>
+  <path d="M0 520c250-120 460-110 680-45 190 56 330 50 520-35v360H0Z" fill="#0D47A1" opacity=".62"/>
+  <path d="M255 420c95-96 220-118 350-70 84 31 152 34 235 3 21 110-67 210-220 235-165 27-327-29-365-168Z" fill="#0B8F66"/>
+  <path d="M285 453c110-43 250-39 420 17" fill="none" stroke="#F7F7F2" stroke-width="22" stroke-linecap="round" opacity=".9"/>
+  <circle cx="970" cy="135" r="92" fill="#F7F7F2" opacity=".28"/>
+  <path d="M115 250c210-60 420-50 640 10 150 41 265 38 350-4" fill="none" stroke="#F7F7F2" stroke-width="15" stroke-linecap="round" opacity=".75"/>
+</svg>

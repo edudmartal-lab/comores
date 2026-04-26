@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">La Réunion</title>
+  <desc id="desc">Illustration placeholder de relief volcanique et océan.</desc>
+  <rect width="1200" height="800" fill="#0D47A1"/>
+  <path d="M0 500 260 315l210 90 160-185 230 250 140-82 200 152v260H0Z" fill="#0B8F66"/>
+  <path d="M0 615c260-72 435-58 640 8 210 68 350 53 560-45v222H0Z" fill="#00B6C7"/>
+  <path d="M425 405 630 220l230 250" fill="none" stroke="#F7F7F2" stroke-width="16" stroke-linecap="round" opacity=".8"/>
+  <path d="M130 210c225-70 425-55 625 0 155 43 275 44 350 2" fill="none" stroke="#F7F7F2" stroke-width="15" stroke-linecap="round" opacity=".72"/>
+</svg>

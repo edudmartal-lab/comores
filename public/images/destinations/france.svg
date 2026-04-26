@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">France</title>
+  <desc id="desc">Illustration placeholder de ville française et ciel clair.</desc>
+  <rect width="1200" height="800" fill="#ECEFF3"/>
+  <rect y="420" width="1200" height="380" fill="#0D47A1"/>
+  <path d="M110 420h140v-95h90v95h130V270h105v150h150V335h95v85h160v-120h110v120h110v380H110Z" fill="#F7F7F2"/>
+  <path d="M540 420 605 160l65 260M575 285h60M560 350h90" stroke="#0B8F66" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M80 575c250-84 440-86 665-35 150 34 265 30 375-18" fill="none" stroke="#00B6C7" stroke-width="18" stroke-linecap="round"/>
+  <path d="M865 515l76 18-56 19-21 55-18-47-52-12 46-18 25-15z" fill="#F7F7F2"/>
+</svg>

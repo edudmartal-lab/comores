@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Istanbul</title>
+  <desc id="desc">Illustration placeholder de coupoles, minarets et route aérienne.</desc>
+  <rect width="1200" height="800" fill="#F7F7F2"/>
+  <rect y="520" width="1200" height="280" fill="#0D47A1"/>
+  <path d="M145 520h910v120H145z" fill="#0B8F66"/>
+  <path d="M285 520v-90a85 85 0 0 1 170 0v90M515 520v-130a110 110 0 0 1 220 0v130M795 520v-90a85 85 0 0 1 170 0v90" fill="#ECEFF3"/>
+  <path d="M220 520V270M995 520V270M210 280h20M985 280h20" stroke="#0D47A1" stroke-width="18" stroke-linecap="round"/>
+  <path d="M95 230c250-80 470-82 690-15 150 46 265 45 340 5" fill="none" stroke="#00B6C7" stroke-width="17" stroke-linecap="round"/>
+  <path d="M825 197l72 17-53 18-20 52-17-45-50-11 45-18 23-13z" fill="#0D47A1"/>
+</svg>
