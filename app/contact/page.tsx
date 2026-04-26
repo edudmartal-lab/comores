@@ -3,12 +3,12 @@ import { ContactForm } from "@/components/ContactForm";
 import { ContactPanel } from "@/components/ContactPanel";
 import { Icon } from "@/components/Icon";
 import { PageHero } from "@/components/PageHero";
-import { CONTACT, CONTACT_LINKS } from "@/lib/site-data";
+import { CONTACTS, CONTACT_LINKS, getContactLinks } from "@/lib/site-data";
 
 export const metadata = {
   title: "Contact",
   description:
-    "Contactez Nadhrat Soilihi, Comores Airways, par téléphone, email ou WhatsApp."
+    "Contactez Mohamed Said et Nadhrat Soilihi, Comores Airways, par téléphone, email ou WhatsApp."
 };
 
 export default function ContactPage() {
@@ -38,34 +38,64 @@ export default function ContactPage() {
             Coordonnées
           </p>
           <h2 className="mt-3 text-3xl font-extrabold text-ca-blue">
-            {CONTACT.name}
+            Direction et accompagnement
           </h2>
-          <p className="mt-2 text-ca-ink/70">{CONTACT.role}</p>
+          <p className="mt-2 text-ca-ink/70">
+            Le directeur est affiché en premier, puis le contact Europe.
+          </p>
 
-          <div className="mt-8 space-y-5">
-            <a
-              href={CONTACT_LINKS.tel}
-              className="flex items-center gap-4 rounded-2xl border border-ca-mist p-4 transition hover:border-ca-turquoise hover:bg-ca-cream"
-            >
-              <Icon name="phone" className="h-8 w-8 text-ca-blue" />
-              <span>
-                <span className="block text-sm text-ca-ink/60">Téléphone</span>
-                <strong className="text-ca-blue">{CONTACT.phoneDisplay}</strong>
-              </span>
-            </a>
-            <a
-              href={CONTACT_LINKS.mailto}
-              className="flex items-center gap-4 rounded-2xl border border-ca-mist p-4 transition hover:border-ca-turquoise hover:bg-ca-cream"
-            >
-              <Icon name="mail" className="h-8 w-8 text-ca-green" />
-              <span>
-                <span className="block text-sm text-ca-ink/60">Email</span>
-                <strong className="break-all text-ca-blue">
-                  {CONTACT.email}
-                </strong>
-              </span>
-            </a>
-            {CONTACT.addresses.map((address) => (
+          <div className="mt-8 space-y-6">
+            {CONTACTS.map((contact, index) => {
+              const links = getContactLinks(contact);
+
+              return (
+                <article
+                  key={contact.key}
+                  className="rounded-3xl border border-ca-mist bg-ca-cream p-5"
+                >
+                  <div className="flex items-center gap-4">
+                    <Icon
+                      name={index === 0 ? "star" : "users"}
+                      className="h-9 w-9 text-ca-blue"
+                    />
+                    <div>
+                      <h3 className="text-xl font-extrabold text-ca-blue">
+                        {contact.name}
+                      </h3>
+                      <p className="text-sm text-ca-ink/70">{contact.role}</p>
+                    </div>
+                  </div>
+                  <div className="mt-5 space-y-3">
+                    <a
+                      href={links.tel}
+                      className="flex items-center gap-3 font-semibold text-ca-blue"
+                    >
+                      <Icon name="phone" className="h-5 w-5 text-ca-turquoise" />
+                      {contact.phoneDisplay}
+                    </a>
+                    <a
+                      href={links.mailto}
+                      className="flex items-center gap-3 break-all font-semibold text-ca-blue"
+                    >
+                      <Icon name="mail" className="h-5 w-5 text-ca-green" />
+                      {contact.email}
+                    </a>
+                    <a
+                      href={links.whatsapp}
+                      className="flex items-center gap-3 font-semibold text-ca-green"
+                    >
+                      <Icon name="whatsapp" className="h-5 w-5" />
+                      WhatsApp
+                    </a>
+                  </div>
+                  <p className="mt-4 text-sm leading-6 text-ca-ink/68">
+                    {contact.note}
+                  </p>
+                </article>
+              );
+            })}
+
+            {CONTACTS[0].addresses.map((address) => (
               <div
                 key={address.label}
                 className="flex items-start gap-4 rounded-2xl border border-ca-mist p-4"

@@ -1,23 +1,43 @@
-export const CONTACT = {
-  name: "Nadhrat Soilihi",
-  role: "Directrice Générale Europe (DGE)",
-  phone: "+33695421957",
-  phoneDisplay: "+33 6 95 42 19 57",
-  email: "nadhrat.soilihi@comoresairways.com",
-  addresses: [
-    {
-      label: "Adresse Paris",
-      value: "140 Avenue des Champs-Élysées, 75008 Paris"
-    },
-    {
-      label: "Adresse Noisy-le-Grand",
-      value: "201 rue de Pizza, 93160 Noisy-le-Grand, France"
-    }
-  ]
-} as const;
+export const ADDRESSES = [
+  {
+    label: "Adresse Paris",
+    value: "140 Avenue des Champs-Élysées, 75008 Paris"
+  },
+  {
+    label: "Adresse Noisy-le-Grand",
+    value: "201 rue de Pizza, 93160 Noisy-le-Grand, France"
+  }
+] as const;
+
+export const CONTACTS = [
+  {
+    key: "direction",
+    name: "Mohamed Said",
+    role: "Directeur Général",
+    phone: "+33635167081",
+    phoneDisplay: "+33 6 35 16 70 81",
+    email: "mohamed.saidyoussouf@comoresairways.com",
+    addresses: ADDRESSES,
+    note: "Contact de direction de Comores Airways."
+  },
+  {
+    key: "nadhrat",
+    name: "Nadhrat Soilihi",
+    role: "Directrice Générale Europe (DGE)",
+    phone: "+33695421957",
+    phoneDisplay: "+33 6 95 42 19 57",
+    email: "nadhrat.soilihi@comoresairways.com",
+    addresses: ADDRESSES,
+    note: "Contact opérationnel pour les demandes de voyage et de devis."
+  }
+] as const;
+
+export const PRIMARY_CONTACT = CONTACTS[0];
+export const NADHRAT_CONTACT = CONTACTS[1];
+export const CONTACT = PRIMARY_CONTACT;
 
 const whatsappText = encodeURIComponent(
-  "Bonjour Nadhrat, je souhaite obtenir des informations pour un voyage avec Comores Airways."
+  "Bonjour, je souhaite obtenir des informations pour un voyage avec Comores Airways."
 );
 
 export const CONTACT_LINKS = {
@@ -25,6 +45,14 @@ export const CONTACT_LINKS = {
   mailto: `mailto:${CONTACT.email}`,
   whatsapp: `https://wa.me/${CONTACT.phone.replace("+", "")}?text=${whatsappText}`
 } as const;
+
+export function getContactLinks(contact: (typeof CONTACTS)[number]) {
+  return {
+    tel: `tel:${contact.phone}`,
+    mailto: `mailto:${contact.email}`,
+    whatsapp: `https://wa.me/${contact.phone.replace("+", "")}?text=${whatsappText}`
+  };
+}
 
 export const navItems = [
   { label: "Accueil", href: "/" },
@@ -110,7 +138,7 @@ export const destinations = [
   {
     name: "Comores",
     subtitle: "Moroni, Anjouan, Mohéli",
-    image: "/images/destinations/comores.svg",
+    image: "/images/destinations/comores-plage.jpg",
     description:
       "Une destination au cœur de l'agence, avec une connaissance concrète des besoins des familles et de la diaspora.",
     tags: ["Moroni", "Anjouan", "Mohéli"]
@@ -187,4 +215,27 @@ export const trustItems = [
   "Tarifs adaptés",
   "Bonne connaissance des destinations",
   "Réactivité et disponibilité"
+] as const;
+
+export const comoresPhotos = [
+  {
+    title: "Rivage des Comores",
+    image: "/images/destinations/comores-plage.jpg",
+    alt: "Plage et lagon turquoise aux Comores"
+  },
+  {
+    title: "Lagon et reliefs",
+    image: "/images/destinations/lagon-comores.jpg",
+    alt: "Lagon calme avec reliefs verts aux Comores"
+  },
+  {
+    title: "Paysage du Karthala",
+    image: "/images/destinations/karthala-paysage.jpg",
+    alt: "Paysage volcanique du Karthala"
+  },
+  {
+    title: "Cratère du Karthala",
+    image: "/images/destinations/cratere-karthala.jpg",
+    alt: "Vue panoramique du cratère du Karthala"
+  }
 ] as const;

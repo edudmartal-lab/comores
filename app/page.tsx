@@ -4,6 +4,7 @@ import { ContactPanel } from "@/components/ContactPanel";
 import { DestinationCard } from "@/components/DestinationCard";
 import { FlightCurves } from "@/components/FlightCurves";
 import { Icon } from "@/components/Icon";
+import { PhotoGallery } from "@/components/PhotoGallery";
 import { ServiceCard } from "@/components/ServiceCard";
 import { CONTACT_LINKS, destinations, services, trustItems } from "@/lib/site-data";
 
@@ -179,6 +180,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <PhotoGallery />
 
       <ContactPanel />
     </>

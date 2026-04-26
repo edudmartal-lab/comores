@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { DestinationCard } from "@/components/DestinationCard";
 import { PageHero } from "@/components/PageHero";
+import { PhotoGallery } from "@/components/PhotoGallery";
 import { destinations } from "@/lib/site-data";
 
 export const metadata = {
@@ -33,6 +34,8 @@ export default function DestinationsPage() {
           ))}
         </div>
       </section>
+
+      <PhotoGallery />
 
       <section className="bg-white py-16">
         <div className="site-container rounded-4xl border border-ca-mist bg-ca-cream p-8 shadow-card md:p-10">

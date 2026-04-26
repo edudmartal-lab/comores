@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FlightCurves } from "@/components/FlightCurves";
 import { Logo } from "@/components/Logo";
-import { CONTACT, CONTACT_LINKS, navItems } from "@/lib/site-data";
+import { CONTACTS, navItems, getContactLinks } from "@/lib/site-data";
 
 export function Footer() {
   return (
@@ -27,16 +27,25 @@ export function Footer() {
         </nav>
         <div>
           <p className="mb-4 font-extrabold">Contact</p>
-          <div className="grid gap-3 text-sm text-white/72">
-            <a href={CONTACT_LINKS.tel} className="hover:text-white">
-              {CONTACT.phoneDisplay}
-            </a>
-            <a href={CONTACT_LINKS.mailto} className="break-all hover:text-white">
-              {CONTACT.email}
-            </a>
-            <a href={CONTACT_LINKS.whatsapp} className="hover:text-white">
-              WhatsApp
-            </a>
+          <div className="grid gap-4 text-sm text-white/72">
+            {CONTACTS.map((contact) => {
+              const links = getContactLinks(contact);
+
+              return (
+                <div key={contact.key} className="grid gap-2">
+                  <p className="font-bold text-white">{contact.name}</p>
+                  <a href={links.tel} className="hover:text-white">
+                    {contact.phoneDisplay}
+                  </a>
+                  <a href={links.mailto} className="break-all hover:text-white">
+                    {contact.email}
+                  </a>
+                  <a href={links.whatsapp} className="hover:text-white">
+                    WhatsApp
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ export function ContactForm() {
 
     const subject = `Contact Comores Airways - ${name || "nouvelle demande"}`;
     const body = [
-      "Bonjour Nadhrat,",
+      "Bonjour,",
       "",
       "Je souhaite contacter Comores Airways.",
       "",

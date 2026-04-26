@@ -7,6 +7,7 @@ Fichiers copiés depuis les visuels fournis :
 - `ca-3-affiche-confiance.png`
 - `ca-4-visuel-carre.png`
 - `ca-5-affiche-voyage.png`
+- `directeur-mohamed-said.jpeg`
 
 Ces fichiers servent de référence graphique et peuvent aussi être utilisés pour les réseaux sociaux, maquettes ou futures pages.
 

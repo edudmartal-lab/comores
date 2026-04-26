@@ -22,7 +22,7 @@ export function ReservationForm() {
 
     const subject = `Demande de voyage - ${destination || "destination à préciser"}`;
     const body = [
-      "Bonjour Nadhrat,",
+      "Bonjour,",
       "",
       "Je souhaite recevoir une proposition pour un voyage.",
       "",

@@ -7,7 +7,7 @@ Structure recommandée :
 - `brand/` : cartes de visite, logo, identité graphique et références de marque.
 - `destinations/` : photos ou visuels des destinations.
 
-Les fichiers SVG actuellement présents dans `destinations/` sont des placeholders propres. Ils peuvent être remplacés par de vraies photos en conservant les mêmes noms de fichiers, ou en modifiant les chemins dans `lib/site-data.ts`.
+Le site contient déjà plusieurs photos recadrées des Comores et du Karthala dans `destinations/`. Les fichiers SVG restants sont des placeholders propres. Ils peuvent être remplacés par de vraies photos en conservant les mêmes noms de fichiers, ou en modifiant les chemins dans `lib/site-data.ts`.
 
 Formats conseillés :
 

@@ -2,7 +2,7 @@
 
 Site vitrine professionnel en français pour Comores Airways, agence de voyage et de services aériens.
 
-Le site est construit avec Next.js App Router, TypeScript et Tailwind CSS. Il est statique, sans base de données, sans paiement en ligne et sans réservation instantanée fictive. Les formulaires préparent un email vers `nadhrat.soilihi@comoresairways.com`.
+Le site est construit avec Next.js App Router, TypeScript et Tailwind CSS. Il est statique, sans base de données, sans paiement en ligne et sans réservation instantanée fictive. Les formulaires préparent un email vers le contact principal de Comores Airways.
 
 ## Lancer le projet en local
 
@@ -53,7 +53,14 @@ public/images/
 
 Les visuels de marque fournis ont été copiés dans `public/images/brand`.
 
-Les images de destinations sont dans `public/images/destinations`. Les fichiers SVG actuels sont des placeholders propres. Pour utiliser de vraies photos, remplacez les fichiers existants en gardant les mêmes noms, ou modifiez les chemins dans `lib/site-data.ts`.
+Les images de destinations sont dans `public/images/destinations`. Plusieurs photos des Comores et du Karthala sont déjà intégrées au site. Les fichiers SVG restants sont des placeholders propres. Pour utiliser de vraies photos supplémentaires, remplacez les fichiers existants en gardant les mêmes noms, ou modifiez les chemins dans `lib/site-data.ts`.
+
+## Contacts
+
+L'ordre d'affichage est centralisé dans `lib/site-data.ts` :
+
+- Mohamed Said, Directeur Général
+- Nadhrat Soilihi, Directrice Générale Europe (DGE)
 
 Recommandations :
 

@@ -1,6 +1,6 @@
 import { ButtonLink } from "@/components/ButtonLink";
 import { Icon } from "@/components/Icon";
-import { CONTACT, CONTACT_LINKS } from "@/lib/site-data";
+import { CONTACTS, CONTACT_LINKS, getContactLinks } from "@/lib/site-data";
 
 type ContactPanelProps = {
   compact?: boolean;
@@ -39,8 +39,8 @@ export function ContactPanel({ compact = false }: ContactPanelProps) {
                   compact ? "text-ca-ink/72" : "text-white/78"
                 }`}
               >
-                Nadhrat Soilihi vous accompagne pour clarifier votre besoin et
-                trouver la réponse la plus adaptée.
+                Mohamed Said et Nadhrat Soilihi sont vos interlocuteurs pour
+                clarifier votre besoin et trouver la réponse la plus adaptée.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href={CONTACT_LINKS.tel} variant={compact ? "blue" : "light"}>
@@ -54,34 +54,69 @@ export function ContactPanel({ compact = false }: ContactPanelProps) {
                 </ButtonLink>
               </div>
             </div>
-            <div
-              className={`rounded-3xl border p-6 ${
-                compact
-                  ? "border-ca-mist bg-ca-cream"
-                  : "border-white/18 bg-white text-ca-ink"
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <Icon name="users" className="h-10 w-10 text-ca-blue" />
-                <div>
-                  <p className="font-extrabold text-ca-blue">{CONTACT.name}</p>
-                  <p className="text-sm text-ca-ink/65">{CONTACT.role}</p>
-                </div>
-              </div>
-              <div className="mt-6 space-y-4 text-sm">
-                <a className="flex gap-3 font-semibold text-ca-blue" href={CONTACT_LINKS.tel}>
-                  <Icon name="phone" className="h-5 w-5 text-ca-turquoise" />
-                  {CONTACT.phoneDisplay}
-                </a>
-                <a className="flex gap-3 break-all font-semibold text-ca-blue" href={CONTACT_LINKS.mailto}>
-                  <Icon name="mail" className="h-5 w-5 text-ca-green" />
-                  {CONTACT.email}
-                </a>
-                <p className="flex gap-3 text-ca-ink/72">
-                  <Icon name="map" className="h-5 w-5 shrink-0 text-ca-turquoise" />
-                  {CONTACT.addresses[1].value}
-                </p>
-              </div>
+            <div className="grid gap-4">
+              {CONTACTS.map((contact, index) => {
+                const links = getContactLinks(contact);
+
+                return (
+                  <div
+                    key={contact.key}
+                    className={`rounded-3xl border p-6 ${
+                      compact
+                        ? "border-ca-mist bg-ca-cream"
+                        : "border-white/18 bg-white text-ca-ink"
+                    }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <Icon
+                        name={index === 0 ? "star" : "users"}
+                        className="h-10 w-10 text-ca-blue"
+                      />
+                      <div>
+                        <p className="font-extrabold text-ca-blue">
+                          {contact.name}
+                        </p>
+                        <p className="text-sm text-ca-ink/65">
+                          {contact.role}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-6 space-y-4 text-sm">
+                      <a
+                        className="flex gap-3 font-semibold text-ca-blue"
+                        href={links.tel}
+                      >
+                        <Icon
+                          name="phone"
+                          className="h-5 w-5 text-ca-turquoise"
+                        />
+                        {contact.phoneDisplay}
+                      </a>
+                      <a
+                        className="flex gap-3 break-all font-semibold text-ca-blue"
+                        href={links.mailto}
+                      >
+                        <Icon name="mail" className="h-5 w-5 text-ca-green" />
+                        {contact.email}
+                      </a>
+                      <a
+                        className="flex gap-3 font-semibold text-ca-green"
+                        href={links.whatsapp}
+                      >
+                        <Icon name="whatsapp" className="h-5 w-5" />
+                        WhatsApp
+                      </a>
+                      <p className="flex gap-3 text-ca-ink/72">
+                        <Icon
+                          name="map"
+                          className="h-5 w-5 shrink-0 text-ca-turquoise"
+                        />
+                        {contact.addresses[0].value}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
