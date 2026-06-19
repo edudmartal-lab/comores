@@ -58,6 +58,7 @@ export const navItems = [
   { label: "Réservation", href: "/reservation" },
   { label: "Services", href: "/services" },
   { label: "Destinations", href: "/destinations" },
+  { label: "Location & VTC", href: "/location-voiture" },
   { label: "Omra & Hajj", href: "/omra-hajj" },
   { label: "Contact", href: "/contact" }
 ] as const;
@@ -129,7 +130,7 @@ export const destinations = [
   {
     name: "France",
     subtitle: "Paris et autres villes",
-    image: "/images/destinations/france.svg",
+    image: "/images/destinations/france.jpg",
     description:
       "Départs, retours et correspondances depuis la France, avec un suivi clair des options disponibles.",
     tags: ["Paris", "Province", "Correspondances"]
@@ -145,7 +146,7 @@ export const destinations = [
   {
     name: "Mayotte",
     subtitle: "Océan Indien",
-    image: "/images/destinations/mayotte.svg",
+    image: "/images/destinations/mayotte.jpg",
     description:
       "Accompagnement pour les trajets vers Mayotte et les liens avec les Comores et la métropole.",
     tags: ["Mamoudzou", "Familles", "Océan Indien"]
@@ -153,7 +154,7 @@ export const destinations = [
   {
     name: "La Réunion",
     subtitle: "Liaisons océan Indien",
-    image: "/images/destinations/reunion.svg",
+    image: "/images/destinations/reunion.jpg",
     description:
       "Demandes de voyages vers La Réunion, avec attention portée aux correspondances et au budget.",
     tags: ["Saint-Denis", "Séjours", "Connexions"]
@@ -161,7 +162,7 @@ export const destinations = [
   {
     name: "Tanzanie",
     subtitle: "Afrique de l'Est",
-    image: "/images/destinations/tanzanie.svg",
+    image: "/images/destinations/tanzanie.jpg",
     description:
       "Itinéraires vers la Tanzanie selon les disponibilités, les dates et les étapes souhaitées.",
     tags: ["Dar es Salaam", "Afrique", "Séjour"]
@@ -169,7 +170,7 @@ export const destinations = [
   {
     name: "Zanzibar",
     subtitle: "Séjours et découvertes",
-    image: "/images/destinations/zanzibar.svg",
+    image: "/images/destinations/zanzibar.jpg",
     description:
       "Demandes de séjours à Zanzibar, entre détente, famille, découverte et organisation pratique.",
     tags: ["Plages", "Séjours", "Transferts"]
@@ -177,7 +178,7 @@ export const destinations = [
   {
     name: "Nairobi",
     subtitle: "Hub régional",
-    image: "/images/destinations/nairobi.svg",
+    image: "/images/destinations/nairobi.jpg",
     description:
       "Possibilités de connexions via Nairobi pour certains itinéraires régionaux et internationaux.",
     tags: ["Kenya", "Transit", "Connexions"]
@@ -185,7 +186,7 @@ export const destinations = [
   {
     name: "Dubaï",
     subtitle: "Hub international",
-    image: "/images/destinations/dubai.svg",
+    image: "/images/destinations/dubai.jpg",
     description:
       "Demandes de vols, escales ou séjours via Dubaï, avec une proposition adaptée au profil du voyage.",
     tags: ["Escale", "Séjour", "International"]
@@ -193,7 +194,7 @@ export const destinations = [
   {
     name: "Istanbul",
     subtitle: "Correspondances",
-    image: "/images/destinations/istanbul.svg",
+    image: "/images/destinations/istanbul.jpg",
     description:
       "Itinéraires via Istanbul pour relier différentes destinations avec des options à confirmer ensemble.",
     tags: ["Transit", "Europe", "International"]
@@ -201,7 +202,7 @@ export const destinations = [
   {
     name: "Djeddah",
     subtitle: "Omra & Hajj",
-    image: "/images/destinations/djeddah.svg",
+    image: "/images/destinations/djeddah.jpg",
     description:
       "Demandes liées aux voyages spirituels, traitées avec sobriété, attention et clarté.",
     tags: ["Arabie saoudite", "Omra", "Hajj"]

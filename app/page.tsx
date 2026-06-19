@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { ContactPanel } from "@/components/ContactPanel";
 import { DestinationCard } from "@/components/DestinationCard";
 import { FlightCurves } from "@/components/FlightCurves";
 import { Icon } from "@/components/Icon";
+import { OazisSection } from "@/components/OazisSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { PlaneBanner } from "@/components/PlaneBanner";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -15,7 +17,15 @@ export default function HomePage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-ca-blue text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(0,182,199,0.55),transparent_28rem),linear-gradient(90deg,rgba(7,31,74,0.92),rgba(13,71,161,0.72),rgba(11,143,102,0.42))]" />
+        <Image
+          src="/images/hero/hero-lagon.jpg"
+          alt="Vue aérienne d'un lagon turquoise de l'océan Indien"
+          fill
+          priority
+          sizes="100vw"
+          className="hero-photo object-cover"
+        />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(0,182,199,0.42),transparent_28rem),linear-gradient(90deg,rgba(7,31,74,0.94),rgba(13,71,161,0.74),rgba(11,143,102,0.46))]" />
         <div className="absolute inset-0 bg-warm-grid bg-[length:38px_38px] opacity-20" />
         <div className="site-container relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
           <div className="animate-soft-reveal">
@@ -182,6 +192,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <OazisSection />
 
       <PhotoGallery />
 
