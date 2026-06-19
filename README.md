@@ -57,10 +57,13 @@ Les images de destinations sont dans `public/images/destinations`. Plusieurs pho
 
 ## Contacts
 
-L'ordre d'affichage est centralisé dans `lib/site-data.ts` :
+Les coordonnées sont centralisées dans `lib/site-data.ts` (`COORDINATES`). Le site
+n'affiche aucun nom de représentant : uniquement les téléphones et les emails.
 
-- Mohamed Said, Directeur Général
-- Nadhrat Soilihi, Directrice Générale Europe (DGE)
+- Téléphone (Paris) : +33 6 35 16 70 81
+- Téléphone (Comores – Moroni) : +269 325 48 25
+- Email : contact@comoresairways.com
+- Réservation : resa@comoresairways.com
 
 Recommandations :
 

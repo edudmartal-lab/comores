@@ -5,6 +5,7 @@ import { DestinationCard } from "@/components/DestinationCard";
 import { FlightCurves } from "@/components/FlightCurves";
 import { Icon } from "@/components/Icon";
 import { PhotoGallery } from "@/components/PhotoGallery";
+import { PlaneBanner } from "@/components/PlaneBanner";
 import { ServiceCard } from "@/components/ServiceCard";
 import { CONTACT_LINKS, destinations, services, trustItems } from "@/lib/site-data";
 
@@ -18,6 +19,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-warm-grid bg-[length:38px_38px] opacity-20" />
         <div className="site-container relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
           <div className="animate-soft-reveal">
+            <PlaneBanner className="mb-5" />
             <p className="mb-5 inline-flex rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur">
               Agence de voyage et services aériens
             </p>

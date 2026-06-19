@@ -3,12 +3,12 @@ import { ContactForm } from "@/components/ContactForm";
 import { ContactPanel } from "@/components/ContactPanel";
 import { Icon } from "@/components/Icon";
 import { PageHero } from "@/components/PageHero";
-import { CONTACTS, CONTACT_LINKS, getContactLinks } from "@/lib/site-data";
+import { COORDINATES, CONTACT_LINKS } from "@/lib/site-data";
 
 export const metadata = {
   title: "Contact",
   description:
-    "Contactez Mohamed Said et Nadhrat Soilihi, Comores Airways, par téléphone, email ou WhatsApp."
+    "Contactez Comores Airways par téléphone, email ou WhatsApp."
 };
 
 export default function ContactPage() {
@@ -38,64 +38,56 @@ export default function ContactPage() {
             Coordonnées
           </p>
           <h2 className="mt-3 text-3xl font-extrabold text-ca-blue">
-            Direction et accompagnement
+            Téléphone et email
           </h2>
           <p className="mt-2 text-ca-ink/70">
-            Le directeur est affiché en premier, puis le contact Europe.
+            Contactez-nous directement par téléphone, email ou WhatsApp.
           </p>
 
           <div className="mt-8 space-y-6">
-            {CONTACTS.map((contact, index) => {
-              const links = getContactLinks(contact);
-
-              return (
-                <article
-                  key={contact.key}
-                  className="rounded-3xl border border-ca-mist bg-ca-cream p-5"
+            <article className="rounded-3xl border border-ca-mist bg-ca-cream p-5">
+              <div className="space-y-3">
+                {COORDINATES.phones.map((phone) => (
+                  <a
+                    key={phone.tel}
+                    href={`tel:${phone.tel}`}
+                    className="flex items-center gap-3 font-semibold text-ca-blue"
+                  >
+                    <Icon name="phone" className="h-5 w-5 shrink-0 text-ca-turquoise" />
+                    <span>
+                      <span className="block text-xs font-medium text-ca-ink/60">
+                        {phone.label}
+                      </span>
+                      {phone.display}
+                    </span>
+                  </a>
+                ))}
+                {COORDINATES.emails.map((email) => (
+                  <a
+                    key={email.value}
+                    href={`mailto:${email.value}`}
+                    className="flex items-center gap-3 break-all font-semibold text-ca-blue"
+                  >
+                    <Icon name="mail" className="h-5 w-5 shrink-0 text-ca-green" />
+                    <span>
+                      <span className="block text-xs font-medium text-ca-ink/60">
+                        {email.label}
+                      </span>
+                      {email.value}
+                    </span>
+                  </a>
+                ))}
+                <a
+                  href={CONTACT_LINKS.whatsapp}
+                  className="flex items-center gap-3 font-semibold text-ca-green"
                 >
-                  <div className="flex items-center gap-4">
-                    <Icon
-                      name={index === 0 ? "star" : "users"}
-                      className="h-9 w-9 text-ca-blue"
-                    />
-                    <div>
-                      <h3 className="text-xl font-extrabold text-ca-blue">
-                        {contact.name}
-                      </h3>
-                      <p className="text-sm text-ca-ink/70">{contact.role}</p>
-                    </div>
-                  </div>
-                  <div className="mt-5 space-y-3">
-                    <a
-                      href={links.tel}
-                      className="flex items-center gap-3 font-semibold text-ca-blue"
-                    >
-                      <Icon name="phone" className="h-5 w-5 text-ca-turquoise" />
-                      {contact.phoneDisplay}
-                    </a>
-                    <a
-                      href={links.mailto}
-                      className="flex items-center gap-3 break-all font-semibold text-ca-blue"
-                    >
-                      <Icon name="mail" className="h-5 w-5 text-ca-green" />
-                      {contact.email}
-                    </a>
-                    <a
-                      href={links.whatsapp}
-                      className="flex items-center gap-3 font-semibold text-ca-green"
-                    >
-                      <Icon name="whatsapp" className="h-5 w-5" />
-                      WhatsApp
-                    </a>
-                  </div>
-                  <p className="mt-4 text-sm leading-6 text-ca-ink/68">
-                    {contact.note}
-                  </p>
-                </article>
-              );
-            })}
+                  <Icon name="whatsapp" className="h-5 w-5" />
+                  WhatsApp
+                </a>
+              </div>
+            </article>
 
-            {CONTACTS[0].addresses.map((address) => (
+            {COORDINATES.addresses.map((address) => (
               <div
                 key={address.label}
                 className="flex items-start gap-4 rounded-2xl border border-ca-mist p-4"
