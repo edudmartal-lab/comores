@@ -16,6 +16,13 @@ const config: Config = {
           cream: "#F7F7F2",
           mist: "#ECEFF3",
           ink: "#14325C"
+        },
+        oazis: {
+          brown: "#3A2A1A",
+          coffee: "#5A4327",
+          gold: "#C9A227",
+          sand: "#E7C977",
+          cream: "#F6EEDF"
         }
       },
       fontFamily: {

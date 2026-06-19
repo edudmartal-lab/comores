@@ -59,8 +59,79 @@ export const navItems = [
   { label: "Services", href: "/services" },
   { label: "Destinations", href: "/destinations" },
   { label: "Omra & Hajj", href: "/omra-hajj" },
+  { label: "Location voiture", href: "/location-voiture" },
   { label: "Contact", href: "/contact" }
 ] as const;
+
+// Oazis-Moroni : service de location de voiture avec chauffeur privé (VTC),
+// proposé sous la marque Comores Airways. Contenu repris du dépliant officiel.
+export const OAZIS = {
+  name: "Oazis-Moroni",
+  parent: "Comores Airways",
+  headline: "Location de voiture avec chauffeur privé – VTC",
+  tagline: "Votre confort, notre priorité",
+  slogan: "Plus qu'un trajet, une expérience de confiance.",
+  since: "2009",
+  availability: "Disponible 7j/7 – 24h/24",
+  location: "Moroni – Comores",
+  intro:
+    "Voyagez en toute sérénité avec un service fiable, ponctuel et sécurisé, partout aux Comores.",
+  welcome: ["Namkaribou", "Tafadhoile", "مرحبا بكم", "Welcome"],
+  phoneDisplay: "+269 325 48 25",
+  phoneTel: "+2693254825",
+  email: "contact@comoresairways.com",
+  services: [
+    { title: "Transfert aéroport (Hahaya)", icon: "plane" },
+    { title: "Hôtels, assemblées, hôpitaux", icon: "hotel" },
+    { title: "Location journée / demi-journée", icon: "calendar" },
+    { title: "Longues distances & régions", icon: "map" },
+    {
+      title: "Événements (travail, famille, sport, réunion)",
+      icon: "users"
+    }
+  ],
+  values: [
+    { label: "Confort", icon: "check" },
+    { label: "Ponctualité", icon: "check" },
+    { label: "Sécurité", icon: "shield" },
+    { label: "Discrétion", icon: "check" },
+    { label: "Satisfaction", icon: "star" }
+  ],
+  formations: [
+    {
+      title: "Accueil & relation client",
+      icon: "users",
+      text: "Savoir accueillir, écouter et satisfaire chaque client."
+    },
+    {
+      title: "Sécurité routière & conduite professionnelle",
+      icon: "shield",
+      text: "Maîtrise de la conduite défensive et respect des règles de sécurité."
+    },
+    {
+      title: "Géographie touristique",
+      icon: "map",
+      text: "Bonne connaissance des régions et sites touristiques des Comores."
+    },
+    {
+      title: "Communication professionnelle",
+      icon: "headset",
+      text: "Communication claire, courtoise et adaptée à tous les voyageurs."
+    },
+    {
+      title: "Gestion du temps & organisation",
+      icon: "calendar",
+      text: "Ponctualité, planification et sens de l'organisation pour un service efficace."
+    }
+  ],
+  links: {
+    tel: "tel:+2693254825",
+    mailto: "mailto:contact@comoresairways.com",
+    whatsapp: `https://wa.me/2693254825?text=${encodeURIComponent(
+      "Bonjour, je souhaite réserver un transfert avec Oazis-Moroni (Comores Airways)."
+    )}`
+  }
+} as const;
 
 export const services = [
   {

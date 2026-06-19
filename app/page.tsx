@@ -4,6 +4,7 @@ import { ContactPanel } from "@/components/ContactPanel";
 import { DestinationCard } from "@/components/DestinationCard";
 import { FlightCurves } from "@/components/FlightCurves";
 import { Icon } from "@/components/Icon";
+import { OazisSection } from "@/components/OazisSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { PlaneBanner } from "@/components/PlaneBanner";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -184,6 +185,8 @@ export default function HomePage() {
       </section>
 
       <PhotoGallery />
+
+      <OazisSection />
 
       <ContactPanel />
     </>
