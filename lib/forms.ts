@@ -1,7 +1,10 @@
 // Envoi des formulaires via Web3Forms (livraison réelle dans la boîte mail).
-// La clé est fournie par variable d'environnement. Si elle est absente,
-// les composants retombent proprement sur un lien `mailto:`.
-export const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+// La clé Web3Forms est PUBLIQUE (prévue pour le code côté client). On la
+// définit ici par défaut pour que les formulaires fonctionnent sans config ;
+// elle reste surchargeable par variable d'environnement.
+export const WEB3FORMS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY ??
+  "950cc4ff-047c-46c4-8a50-1e19851c676b";
 
 export const isFormDeliveryEnabled = WEB3FORMS_KEY.length > 0;
 
