@@ -16,7 +16,7 @@ export default function DestinationsPage() {
       <PageHero
         eyebrow="Destinations"
         title="France, Comores, océan Indien et grands hubs internationaux."
-        subtitle="Les destinations présentées indiquent les demandes les plus fréquentes. Les itinéraires, compagnies et disponibilités sont confirmés après échange."
+        subtitle="Les demandes les plus fréquentes. Itinéraires et disponibilités confirmés après échange."
       >
         <ButtonLink href="/reservation" variant="green">
           Demander un itinéraire
@@ -46,9 +46,8 @@ export default function DestinationsPage() {
             Une destination se confirme toujours avec vous.
           </h2>
           <p className="mt-4 max-w-3xl leading-8 text-ca-ink/78">
-            Comores Airways ne publie pas de prix inventés ni de fausse
-            réservation immédiate. L'objectif est de comprendre votre besoin,
-            vérifier les possibilités disponibles, puis vous orienter clairement.
+            Pas de prix inventés ni de fausse réservation immédiate : nous
+            vérifions les possibilités, puis vous orientons clairement.
           </p>
         </div>
       </section>

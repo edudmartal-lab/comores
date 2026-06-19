@@ -2,16 +2,20 @@
 
 import { FormEvent, useState } from "react";
 import { CONTACT } from "@/lib/site-data";
+import { isFormDeliveryEnabled, openMailto, submitForm } from "@/lib/forms";
 
 const inputClass =
   "w-full rounded-2xl border border-ca-mist bg-white px-4 py-3 text-ca-ink outline-none transition placeholder:text-ca-ink/40 focus:border-ca-turquoise focus:ring-4 focus:ring-ca-turquoise/15";
 
-export function ContactForm() {
-  const [sent, setSent] = useState(false);
+type Status = "idle" | "sending" | "success" | "mailto";
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+export function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = String(formData.get("name") ?? "");
     const phone = String(formData.get("phone") ?? "");
     const email = String(formData.get("email") ?? "");
@@ -33,10 +37,26 @@ export function ContactForm() {
       "Merci."
     ].join("\n");
 
-    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    const delivered = await submitForm({
+      subject,
+      from_name: name || "Visiteur du site",
+      replyto: email,
+      name,
+      phone,
+      email,
+      message
+    });
+
+    if (delivered) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    // Repli : ouverture de la messagerie avec un email prérempli.
+    openMailto(CONTACT.email, subject, body);
+    setStatus("mailto");
   }
 
   return (
@@ -51,9 +71,20 @@ export function ContactForm() {
         Écrire à Comores Airways
       </h2>
       <p className="mt-4 leading-7 text-ca-ink/70">
-        Le bouton ouvre votre messagerie avec un email prérempli. Vous gardez la
-        main avant l'envoi.
+        {isFormDeliveryEnabled
+          ? "Remplissez le formulaire : votre message nous est envoyé directement."
+          : "Le bouton ouvre votre messagerie avec un email prérempli."}
       </p>
+
+      {/* Anti-spam (honeypot Web3Forms) : laissé vide par les humains. */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
 
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         <label className="block">
@@ -85,13 +116,24 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="mt-6 inline-flex rounded-2xl bg-ca-blue px-6 py-3 text-sm font-extrabold text-white shadow-card transition hover:bg-ca-blue/92 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ca-turquoise/40"
+        disabled={status === "sending"}
+        className="mt-6 inline-flex rounded-2xl bg-ca-blue px-6 py-3 text-sm font-extrabold text-white shadow-card transition hover:bg-ca-blue/92 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ca-turquoise/40 disabled:opacity-60"
       >
-        Préparer mon email
+        {status === "sending"
+          ? "Envoi…"
+          : isFormDeliveryEnabled
+            ? "Envoyer mon message"
+            : "Préparer mon email"}
       </button>
-      {sent ? (
+      {status === "success" ? (
         <p className="mt-4 text-sm font-semibold text-ca-green">
-          Votre messagerie devrait s'ouvrir avec le message prérempli.
+          Merci, votre message a bien été envoyé. Nous vous répondrons au plus
+          vite.
+        </p>
+      ) : null}
+      {status === "mailto" ? (
+        <p className="mt-4 text-sm font-semibold text-ca-green">
+          Votre messagerie s'ouvre avec le message prérempli.
         </p>
       ) : null}
     </form>

@@ -2,16 +2,20 @@
 
 import { FormEvent, useState } from "react";
 import { CONTACT } from "@/lib/site-data";
+import { isFormDeliveryEnabled, openMailto, submitForm } from "@/lib/forms";
 
 const inputClass =
   "w-full rounded-2xl border border-ca-mist bg-white px-4 py-3 text-ca-ink outline-none transition placeholder:text-ca-ink/40 focus:border-ca-turquoise focus:ring-4 focus:ring-ca-turquoise/15";
 
-export function ReservationForm() {
-  const [sent, setSent] = useState(false);
+type Status = "idle" | "sending" | "success" | "mailto";
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+export function ReservationForm() {
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const name = String(formData.get("name") ?? "");
     const phone = String(formData.get("phone") ?? "");
     const email = String(formData.get("email") ?? "");
@@ -20,7 +24,9 @@ export function ReservationForm() {
     const travelers = String(formData.get("travelers") ?? "");
     const message = String(formData.get("message") ?? "");
 
-    const subject = `Demande de voyage - ${destination || "destination à préciser"}`;
+    const subject = `RÉSERVATION - Demande de voyage - ${
+      destination || "destination à préciser"
+    }`;
     const body = [
       "Bonjour,",
       "",
@@ -39,10 +45,28 @@ export function ReservationForm() {
       "Merci."
     ].join("\n");
 
-    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus("sending");
+    const delivered = await submitForm({
+      subject,
+      from_name: name || "Visiteur du site",
+      replyto: email,
+      name,
+      phone,
+      email,
+      destination,
+      date,
+      travelers,
+      message
+    });
+
+    if (delivered) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    openMailto(CONTACT.email, subject, body);
+    setStatus("mailto");
   }
 
   return (
@@ -50,6 +74,15 @@ export function ReservationForm() {
       onSubmit={handleSubmit}
       className="rounded-4xl border border-ca-mist bg-ca-cream p-6 shadow-card md:p-8"
     >
+      {/* Anti-spam (honeypot Web3Forms) : laissé vide par les humains. */}
+      <input
+        type="checkbox"
+        name="botcheck"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        aria-hidden="true"
+      />
       <div className="grid gap-4 md:grid-cols-2">
         <label className="block">
           <span className="mb-2 block text-sm font-bold text-ca-blue">Nom</span>
@@ -110,13 +143,20 @@ export function ReservationForm() {
       </div>
       <button
         type="submit"
-        className="mt-6 inline-flex rounded-2xl bg-ca-green px-6 py-3 text-sm font-extrabold text-white shadow-card transition hover:bg-ca-green/92 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ca-turquoise/40"
+        disabled={status === "sending"}
+        className="mt-6 inline-flex rounded-2xl bg-ca-green px-6 py-3 text-sm font-extrabold text-white shadow-card transition hover:bg-ca-green/92 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ca-turquoise/40 disabled:opacity-60"
       >
-        Envoyer ma demande
+        {status === "sending" ? "Envoi…" : "Envoyer ma demande"}
       </button>
-      {sent ? (
+      {status === "success" ? (
         <p className="mt-4 text-sm font-semibold text-ca-green">
-          Votre messagerie devrait s'ouvrir avec la demande préremplie.
+          Merci, votre demande a bien été envoyée. Nous revenons vers vous
+          rapidement.
+        </p>
+      ) : null}
+      {status === "mailto" ? (
+        <p className="mt-4 text-sm font-semibold text-ca-green">
+          Votre messagerie s'ouvre avec la demande préremplie.
         </p>
       ) : null}
       <p className="mt-5 text-sm leading-6 text-ca-ink/62">

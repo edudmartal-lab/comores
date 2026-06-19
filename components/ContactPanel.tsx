@@ -39,8 +39,7 @@ export function ContactPanel({ compact = false }: ContactPanelProps) {
                   compact ? "text-ca-ink/72" : "text-white/78"
                 }`}
               >
-                Une équipe à votre écoute pour clarifier votre besoin et trouver
-                la réponse la plus adaptée. Appelez ou écrivez-nous directement.
+                Une équipe à votre écoute. Appelez ou écrivez-nous directement.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href={CONTACT_LINKS.tel} variant={compact ? "blue" : "light"}>

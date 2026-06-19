@@ -137,62 +137,52 @@ export const services = [
   {
     title: "Billetterie aérienne",
     icon: "ticket",
-    description:
-      "Recherche et demande de billets selon votre trajet, vos dates et vos contraintes."
+    description: "Billets selon votre trajet, vos dates et votre budget."
   },
   {
     title: "Séjours sur mesure",
     icon: "plane",
-    description:
-      "Organisation de séjours adaptés aux familles, voyageurs individuels et groupes."
+    description: "Séjours adaptés aux familles, individuels et groupes."
   },
   {
     title: "Hôtels & appartements",
     icon: "hotel",
-    description:
-      "Orientation vers des solutions d'hébergement selon la destination et le besoin."
+    description: "Hébergements choisis selon la destination."
   },
   {
     title: "Véhicules & transferts",
     icon: "car",
-    description:
-      "Aide pour prévoir les déplacements utiles à l'arrivée, au départ ou pendant le séjour."
+    description: "Transferts à l'arrivée comme au départ."
   },
   {
     title: "Assistance en escale",
     icon: "headset",
-    description:
-      "Accompagnement et informations pour rendre les étapes du voyage plus sereines."
+    description: "Un accompagnement à chaque étape du voyage."
   },
   {
     title: "Omra & Hajj",
     icon: "mosque",
-    description:
-      "Préparation sobre et attentive pour les demandes liées aux voyages spirituels."
+    description: "Préparation attentive de vos voyages spirituels."
   },
   {
     title: "Cargo & fret",
     icon: "cargo",
-    description:
-      "Demandes de transport de marchandises, colis ou bagages selon les possibilités."
+    description: "Transport de marchandises, colis et bagages."
   },
   {
     title: "Affrètement / Charter",
     icon: "plane",
-    description:
-      "Étude de demandes spécifiques pour groupes, organisations ou besoins ponctuels."
+    description: "Solutions sur mesure pour groupes et organisations."
   },
   {
     title: "Assurance voyage",
     icon: "shield",
-    description:
-      "Information et accompagnement sur les protections utiles avant un départ."
+    description: "Les protections utiles avant le départ."
   },
   {
     title: "Formalités et accompagnement",
     icon: "file",
-    description:
-      "Aide à clarifier les documents et étapes à anticiper avant le voyage."
+    description: "Documents et étapes clarifiés avant de partir."
   }
 ] as const;
 
@@ -202,7 +192,7 @@ export const destinations = [
     subtitle: "Paris et autres villes",
     image: "/images/destinations/france.svg",
     description:
-      "Départs, retours et correspondances depuis la France, avec un suivi clair des options disponibles.",
+      "Départs, retours et correspondances depuis la France.",
     tags: ["Paris", "Province", "Correspondances"]
   },
   {
@@ -210,7 +200,7 @@ export const destinations = [
     subtitle: "Moroni, Anjouan, Mohéli",
     image: "/images/destinations/comores-plage.jpg",
     description:
-      "Une destination au cœur de l'agence, avec une connaissance concrète des besoins des familles et de la diaspora.",
+      "Au cœur de l'agence : familles et diaspora des Comores.",
     tags: ["Moroni", "Anjouan", "Mohéli"]
   },
   {
@@ -218,7 +208,7 @@ export const destinations = [
     subtitle: "Océan Indien",
     image: "/images/destinations/mayotte.svg",
     description:
-      "Accompagnement pour les trajets vers Mayotte et les liens avec les Comores et la métropole.",
+      "Trajets vers Mayotte, les Comores et la métropole.",
     tags: ["Mamoudzou", "Familles", "Océan Indien"]
   },
   {
@@ -226,23 +216,21 @@ export const destinations = [
     subtitle: "Liaisons océan Indien",
     image: "/images/destinations/reunion.svg",
     description:
-      "Demandes de voyages vers La Réunion, avec attention portée aux correspondances et au budget.",
+      "Voyages vers La Réunion : correspondances et budget.",
     tags: ["Saint-Denis", "Séjours", "Connexions"]
   },
   {
     name: "Tanzanie",
     subtitle: "Afrique de l'Est",
     image: "/images/destinations/tanzanie.svg",
-    description:
-      "Itinéraires vers la Tanzanie selon les disponibilités, les dates et les étapes souhaitées.",
+    description: "Itinéraires vers la Tanzanie selon vos dates.",
     tags: ["Dar es Salaam", "Afrique", "Séjour"]
   },
   {
     name: "Zanzibar",
     subtitle: "Séjours et découvertes",
     image: "/images/destinations/zanzibar.svg",
-    description:
-      "Demandes de séjours à Zanzibar, entre détente, famille, découverte et organisation pratique.",
+    description: "Séjours à Zanzibar : détente et découverte.",
     tags: ["Plages", "Séjours", "Transferts"]
   },
   {
@@ -250,31 +238,28 @@ export const destinations = [
     subtitle: "Hub régional",
     image: "/images/destinations/nairobi.svg",
     description:
-      "Possibilités de connexions via Nairobi pour certains itinéraires régionaux et internationaux.",
+      "Connexions via Nairobi, régionales et internationales.",
     tags: ["Kenya", "Transit", "Connexions"]
   },
   {
     name: "Dubaï",
     subtitle: "Hub international",
     image: "/images/destinations/dubai.svg",
-    description:
-      "Demandes de vols, escales ou séjours via Dubaï, avec une proposition adaptée au profil du voyage.",
+    description: "Vols, escales et séjours via Dubaï.",
     tags: ["Escale", "Séjour", "International"]
   },
   {
     name: "Istanbul",
     subtitle: "Correspondances",
     image: "/images/destinations/istanbul.svg",
-    description:
-      "Itinéraires via Istanbul pour relier différentes destinations avec des options à confirmer ensemble.",
+    description: "Itinéraires et correspondances via Istanbul.",
     tags: ["Transit", "Europe", "International"]
   },
   {
     name: "Djeddah",
     subtitle: "Omra & Hajj",
     image: "/images/destinations/djeddah.svg",
-    description:
-      "Demandes liées aux voyages spirituels, traitées avec sobriété, attention et clarté.",
+    description: "Voyages spirituels, traités avec attention.",
     tags: ["Arabie saoudite", "Omra", "Hajj"]
   }
 ] as const;

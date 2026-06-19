@@ -7,6 +7,7 @@ import { Icon } from "@/components/Icon";
 import { OazisSection } from "@/components/OazisSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { ServiceCard } from "@/components/ServiceCard";
+import { VideoSection } from "@/components/VideoSection";
 import { CONTACT_LINKS, destinations, services, trustItems } from "@/lib/site-data";
 
 const featuredDestinations = destinations.slice(0, 4);
@@ -104,6 +105,8 @@ export default function HomePage() {
       </section>
 
       <PhotoGallery />
+
+      <VideoSection />
 
       <OazisSection />
 

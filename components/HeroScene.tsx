@@ -89,10 +89,9 @@ export function HeroScene() {
             <span className="animate-shimmer text-shimmer">les Comores</span> et
             l&apos;international.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90">
-            Billets d&apos;avion, séjours sur mesure, Omra &amp; Hajj, assistance
-            voyage, cargo et services aériens : un accompagnement humain et fiable
-            à chaque étape.
+          <p className="mt-6 max-w-xl text-lg leading-8 text-white/90">
+            Billets, séjours, Omra &amp; Hajj, assistance et cargo. Un
+            accompagnement humain à chaque étape.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href="/reservation" variant="green">

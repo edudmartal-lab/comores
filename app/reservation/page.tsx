@@ -15,7 +15,7 @@ export default function ReservationPage() {
       <PageHero
         eyebrow="Demande de voyage"
         title="Une demande simple, puis un échange humain."
-        subtitle="Décrivez votre trajet, vos dates et vos besoins. Comores Airways vous répond avec une proposition adaptée, sans fausse réservation instantanée."
+        subtitle="Décrivez votre trajet et vos dates. Nous vous répondons avec une proposition adaptée."
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href={CONTACT_LINKS.tel} variant="green">
@@ -36,8 +36,7 @@ export default function ReservationPage() {
             Envoyer ma demande
           </h2>
           <p className="mt-5 text-lg leading-8 text-ca-ink/78">
-            Le formulaire prépare un email avec vos informations. Vous pouvez le
-            relire avant l'envoi depuis votre messagerie.
+            Remplissez le formulaire : nous revenons vers vous rapidement.
           </p>
           <div className="mt-8 grid gap-4">
             {[
