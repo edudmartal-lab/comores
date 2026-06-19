@@ -48,11 +48,39 @@ const config: Config = {
         softReveal: {
           "0%": { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" }
+        },
+        flyAcross: {
+          "0%": { transform: "translate3d(-12vw, 18px, 0) rotate(-6deg)", opacity: "0" },
+          "8%": { opacity: "1" },
+          "92%": { opacity: "1" },
+          "100%": { transform: "translate3d(115vw, -60px, 0) rotate(-6deg)", opacity: "0" }
+        },
+        drift: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }
+        },
+        sunGlow: {
+          "0%, 100%": { opacity: "0.55", transform: "scale(1)" },
+          "50%": { opacity: "0.85", transform: "scale(1.08)" }
+        },
+        floatY: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" }
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "200% 50%" }
         }
       },
       animation: {
         "float-plane": "floatPlane 6s ease-in-out infinite",
-        "soft-reveal": "softReveal 700ms ease-out both"
+        "soft-reveal": "softReveal 700ms ease-out both",
+        "fly-across": "flyAcross 24s linear infinite",
+        "drift-slow": "drift 60s linear infinite",
+        "drift-slower": "drift 95s linear infinite",
+        "sun-glow": "sunGlow 7s ease-in-out infinite",
+        "float-y": "floatY 7s ease-in-out infinite",
+        shimmer: "shimmer 6s linear infinite"
       }
     }
   },

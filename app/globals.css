@@ -62,3 +62,48 @@ select {
 .text-balance {
   text-wrap: balance;
 }
+
+/* Titre avec dégradé animé (effet « shimmer »). */
+.text-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    #ffffff 0%,
+    #9fe9ff 30%,
+    #ffffff 50%,
+    #8effd0 70%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Couche de fond du hero : prête à recevoir une vraie photo plus tard.
+   Pour activer une photo, définir --hero-photo sur l'élément .hero-photo,
+   ex. style={{ ["--hero-photo"]: "url('/images/.../comores.jpg')" }}. */
+.hero-photo {
+  background-image: var(--hero-photo, none);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Survol « lift » pour les cartes interactives. */
+.lift {
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+.lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(13, 71, 161, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
