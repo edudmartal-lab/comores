@@ -9,50 +9,49 @@ export const ADDRESSES = [
   }
 ] as const;
 
-export const CONTACTS = [
-  {
-    key: "direction",
-    name: "Mohamed Said",
-    role: "Directeur Général",
-    phone: "+33635167081",
-    phoneDisplay: "+33 6 35 16 70 81",
-    email: "mohamed.saidyoussouf@comoresairways.com",
-    addresses: ADDRESSES,
-    note: "Contact de direction de Comores Airways."
-  },
-  {
-    key: "nadhrat",
-    name: "Nadhrat Soilihi",
-    role: "Directrice Générale Europe (DGE)",
-    phone: "+33695421957",
-    phoneDisplay: "+33 6 95 42 19 57",
-    email: "nadhrat.soilihi@comoresairways.com",
-    addresses: ADDRESSES,
-    note: "Contact opérationnel pour les demandes de voyage et de devis."
-  }
-] as const;
+// Coordonnées de l'agence, sans nom de représentant : uniquement
+// téléphone et email, comme demandé par la direction.
+export const COORDINATES = {
+  phones: [
+    {
+      label: "Téléphone (Paris)",
+      display: "+33 6 35 16 70 81",
+      tel: "+33635167081"
+    },
+    {
+      label: "Téléphone (Comores – Moroni)",
+      display: "+269 325 48 25",
+      tel: "+2693254825"
+    }
+  ],
+  emails: [
+    {
+      label: "Email",
+      value: "contact@comoresairways.com"
+    },
+    {
+      label: "Réservation",
+      value: "resa@comoresairways.com"
+    }
+  ],
+  addresses: ADDRESSES
+} as const;
 
-export const PRIMARY_CONTACT = CONTACTS[0];
-export const NADHRAT_CONTACT = CONTACTS[1];
-export const CONTACT = PRIMARY_CONTACT;
+export const PRIMARY_PHONE = COORDINATES.phones[0];
+export const PRIMARY_EMAIL = COORDINATES.emails[0];
+
+// Conservé pour les formulaires (mailto de destination).
+export const CONTACT = { email: PRIMARY_EMAIL.value } as const;
 
 const whatsappText = encodeURIComponent(
   "Bonjour, je souhaite obtenir des informations pour un voyage avec Comores Airways."
 );
 
 export const CONTACT_LINKS = {
-  tel: `tel:${CONTACT.phone}`,
-  mailto: `mailto:${CONTACT.email}`,
-  whatsapp: `https://wa.me/${CONTACT.phone.replace("+", "")}?text=${whatsappText}`
+  tel: `tel:${PRIMARY_PHONE.tel}`,
+  mailto: `mailto:${PRIMARY_EMAIL.value}`,
+  whatsapp: `https://wa.me/${PRIMARY_PHONE.tel.replace("+", "")}?text=${whatsappText}`
 } as const;
-
-export function getContactLinks(contact: (typeof CONTACTS)[number]) {
-  return {
-    tel: `tel:${contact.phone}`,
-    mailto: `mailto:${contact.email}`,
-    whatsapp: `https://wa.me/${contact.phone.replace("+", "")}?text=${whatsappText}`
-  };
-}
 
 export const navItems = [
   { label: "Accueil", href: "/" },
