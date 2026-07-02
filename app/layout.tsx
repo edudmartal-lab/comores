@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,9 +37,13 @@ export default function RootLayout({
   return (
     <html lang="fr" className={montserrat.variable}>
       <body>
+        <a href="#contenu" className="skip-link">
+          Aller au contenu principal
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="contenu">{children}</main>
         <Footer />
+        <WhatsAppFab />
       </body>
     </html>
   );
