@@ -1,9 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FlightCurves } from "@/components/FlightCurves";
 import { Logo } from "@/components/Logo";
 import { COORDINATES, CONTACT_LINKS, navItems } from "@/lib/site-data";
 
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer className="relative overflow-hidden bg-ca-ink text-white">
       <FlightCurves className="absolute -top-12 left-0 h-28 w-full opacity-35" />
@@ -18,11 +28,21 @@ export function Footer() {
         <nav aria-label="Navigation de pied de page">
           <p className="mb-4 font-extrabold">Pages</p>
           <div className="grid gap-3 text-sm text-white/72">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-white">
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const active = isActive(pathname, item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`w-fit rounded transition hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ca-turquoise/40 ${
+                    active ? "font-bold text-white" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </nav>
         <div>
