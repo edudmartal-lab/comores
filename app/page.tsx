@@ -9,6 +9,7 @@ import { OazisSection } from "@/components/OazisSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { PlaneBanner } from "@/components/PlaneBanner";
 import { ServiceCard } from "@/components/ServiceCard";
+import { VideoSection } from "@/components/VideoSection";
 import { CONTACT_LINKS, destinations, services, trustItems } from "@/lib/site-data";
 
 const featuredDestinations = destinations.slice(0, 4);
@@ -105,6 +106,8 @@ export default function HomePage() {
         </div>
         <FlightCurves className="absolute -bottom-9 left-0 right-0 h-28 w-full text-white" />
       </section>
+
+      <VideoSection />
 
       <section className="site-container py-20">
         <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
