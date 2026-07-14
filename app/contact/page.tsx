@@ -17,7 +17,9 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Un contact direct pour préparer votre voyage."
-        subtitle="Appelez, écrivez ou envoyez une demande : Comores Airways vous répond avec une approche claire et humaine."
+        subtitle="Appelez, écrivez ou envoyez une demande : nous vous répondons rapidement."
+        image="/images/destinations/comores-plage.jpg"
+        imageAlt="Plage et lagon aux Comores"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href={CONTACT_LINKS.tel} variant="green">

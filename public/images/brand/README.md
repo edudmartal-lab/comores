@@ -11,4 +11,7 @@ Fichiers copiés depuis les visuels fournis :
 
 Ces fichiers servent de référence graphique et peuvent aussi être utilisés pour les réseaux sociaux, maquettes ou futures pages.
 
-Pour le site, un logo SVG stylisé est actuellement intégré dans `components/Logo.tsx`. Si un logo officiel détouré est disponible, placez-le ici et remplacez le composant par une image.
+Logo officiel (fourni dans le document de finalisation 2026, détouré sur fond transparent) :
+
+- `logo-officiel.png` : logo complet avec le texte « COMORES AIRWAYS »
+- `logo-embleme.png` : emblème seul (croissant + A + étoiles), utilisé par `components/Logo.tsx`

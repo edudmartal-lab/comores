@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ButtonLink } from "@/components/ButtonLink";
 import { ContactPanel } from "@/components/ContactPanel";
@@ -8,7 +7,6 @@ import { Icon } from "@/components/Icon";
 import { OazisSection } from "@/components/OazisSection";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { PlaneBanner } from "@/components/PlaneBanner";
-import { ServiceCard } from "@/components/ServiceCard";
 import { CONTACT_LINKS, destinations, services, trustItems } from "@/lib/site-data";
 
 const featuredDestinations = destinations.slice(0, 4);
@@ -17,93 +15,64 @@ export default function HomePage() {
   return (
     <>
       <section className="relative isolate overflow-hidden bg-ca-blue text-white">
-        <Image
-          src="/images/hero/hero-lagon.jpg"
-          alt="Vue aérienne d'un lagon turquoise de l'océan Indien"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-photo object-cover"
-        />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,rgba(0,182,199,0.42),transparent_28rem),linear-gradient(90deg,rgba(7,31,74,0.94),rgba(13,71,161,0.74),rgba(11,143,102,0.46))]" />
-        <div className="absolute inset-0 bg-warm-grid bg-[length:38px_38px] opacity-20" />
-        <div className="site-container relative grid min-h-[680px] items-center gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
-          <div className="animate-soft-reveal">
-            <PlaneBanner className="mb-5" />
-            <p className="mb-5 inline-flex rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur">
-              Agence de voyage et services aériens
-            </p>
-            <h1 className="max-w-3xl text-balance text-4xl font-extrabold leading-tight tracking-[-0.04em] md:text-6xl">
-              Voyagez entre la France, les Comores et l'international, avec un
-              accompagnement humain et fiable.
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          poster="/images/hero/hero-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Vue aérienne d'un lagon turquoise et d'îles de l'océan Indien"
+        >
+          <source src="/videos/hero-lagon.webm" type="video/webm" />
+          <source src="/videos/hero-lagon.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,74,0.72),rgba(13,71,161,0.32)_52%,transparent_78%),linear-gradient(0deg,rgba(7,31,74,0.55),transparent_38%)]" />
+        <div className="site-container relative flex min-h-[640px] items-center py-20 lg:py-28">
+          <div className="max-w-2xl animate-soft-reveal">
+            <PlaneBanner className="mb-6" />
+            <h1 className="text-balance text-4xl font-extrabold leading-tight tracking-[-0.04em] md:text-6xl">
+              Voyagez entre la France, les Comores et l'international.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/88">
-              Billets d'avion, séjours sur mesure, Omra & Hajj, assistance
-              voyage, cargo et services aériens : Comores Airways vous
-              accompagne à chaque étape de votre voyage.
+            <p className="mt-5 max-w-xl text-lg leading-8 text-white/90">
+              Billets, séjours, Omra &amp; Hajj et transferts, avec un
+              accompagnement humain.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/reservation" variant="green">
                 Réserver
               </ButtonLink>
-              <ButtonLink href="/reservation#devis" variant="light">
-                Demander un devis
-              </ButtonLink>
               <ButtonLink href="/contact" variant="outlineLight">
                 Nous contacter
               </ButtonLink>
             </div>
-            <div className="mt-10 grid gap-3 text-sm text-white/86 sm:grid-cols-3">
-              {["France", "Comores", "International"].map((item) => (
-                <div
-                  key={item}
-                  className="rounded-2xl border border-white/18 bg-white/10 px-4 py-3 backdrop-blur"
-                >
-                  <span className="mr-2 inline-block h-2 w-2 rounded-full bg-ca-turquoise" />
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-[500px] animate-soft-reveal rounded-[2rem] border border-white/20 bg-white/12 p-4 shadow-soft backdrop-blur">
-            <div className="rounded-[1.5rem] bg-ca-cream p-5 text-ca-ink">
-              <div className="relative overflow-hidden rounded-[1.25rem] bg-gradient-to-br from-ca-turquoise via-ca-blue to-ca-green p-6 text-white">
-                <FlightCurves className="absolute -bottom-12 -right-12 w-72 opacity-80" />
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/75">
-                  Votre voyage
-                </p>
-                <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em]">
-                  Notre accompagnement
-                </h2>
-                <p className="mt-4 max-w-sm text-sm leading-6 text-white/86">
-                  Une personne identifiée, des réponses claires, et un suivi
-                  jusqu'au départ.
-                </p>
-                <div className="mt-10 inline-flex animate-float-plane rounded-full bg-white px-4 py-3 text-ca-blue shadow-card">
-                  <Icon name="plane" className="h-7 w-7" />
-                </div>
-              </div>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {services.slice(0, 4).map((service) => (
-                  <div
-                    key={service.title}
-                    className="rounded-2xl border border-ca-mist bg-white p-4"
-                  >
-                    <Icon
-                      name={service.icon}
-                      className="mb-3 h-7 w-7 text-ca-blue"
-                    />
-                    <p className="text-sm font-bold text-ca-blue">
-                      {service.title}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
         <FlightCurves className="absolute -bottom-9 left-0 right-0 h-28 w-full text-white" />
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="site-container">
+          <div className="mb-8 text-center">
+            <p className="font-semibold uppercase tracking-[0.22em] text-ca-green">
+              Découvrir
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-ca-blue md:text-4xl">
+              Les Comores en vidéo
+            </h2>
+          </div>
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-4xl border border-ca-mist shadow-soft">
+            <iframe
+              className="aspect-video w-full"
+              src="https://www.youtube-nocookie.com/embed/7yFB90Nl-Ic"
+              title="Découvrez les Comores : les îles paradisiaques de l'Afrique de l'Est"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
       </section>
 
       <section className="site-container py-20">
@@ -123,9 +92,19 @@ export default function HomePage() {
             Voir tous les services
           </Link>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {services.map((service) => (
-            <ServiceCard key={service.title} service={service} compact />
+            <div
+              key={service.title}
+              className="flex items-center gap-3 rounded-2xl border border-ca-mist bg-white p-4 shadow-card transition hover:-translate-y-0.5 hover:border-ca-turquoise"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ca-cream text-ca-blue">
+                <Icon name={service.icon} className="h-6 w-6" />
+              </span>
+              <p className="text-sm font-bold leading-snug text-ca-blue">
+                {service.title}
+              </p>
+            </div>
           ))}
         </div>
       </section>

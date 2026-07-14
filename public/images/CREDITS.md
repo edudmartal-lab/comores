@@ -1,4 +1,13 @@
-# Crédits photos
+# Crédits photos et vidéos
+
+## Vidéo du hero (accueil)
+
+| Fichier | Sujet | Source | Licence |
+| --- | --- | --- | --- |
+| `videos/hero-lagon.mp4` / `.webm` + `images/hero/hero-poster.jpg` | Vue aérienne d'un littoral tropical, îles vertes et eaux turquoise (drone) | [Wikimedia Commons – DJI 0357](https://commons.wikimedia.org/wiki/File:DJI_0357_-_Aerial_view_of_a_coastal_town_nestled_among_lush_green_islands_with_turquoise_waters_and_white_buildings_under_a_partly_cloudy_sky.webm) | Domaine public (gouvernement des États-Unis) |
+
+Extrait de 20 s ré-encodé sans audio en 1600 px : H.264 (~3,3 Mo) et VP9 (~2,2 Mo).
+
 
 Toutes les photos ajoutées lors de la « Tanda 2 » proviennent de **Pexels**
 (<https://www.pexels.com>). La licence Pexels autorise l'usage commercial,

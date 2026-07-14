@@ -120,8 +120,10 @@ export function ReservationForm() {
         </p>
       ) : null}
       <p className="mt-5 text-sm leading-6 text-ca-ink/62">
-        Ce formulaire ne confirme pas une réservation. Les disponibilités,
-        tarifs et conditions sont vérifiés après échange.
+        Ce formulaire ne confirme pas une réservation. Votre demande est
+        traitée par un conseiller via notre système de réservation
+        professionnel (GDS B2B Resaneo) : disponibilités, tarifs et conditions
+        sont confirmés après échange.
       </p>
     </form>
   );

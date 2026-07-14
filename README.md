@@ -62,8 +62,10 @@ n'affiche aucun nom de représentant : uniquement les téléphones et les emails
 
 - Téléphone (Paris) : +33 6 35 16 70 81
 - Téléphone (Comores – Moroni) : +269 325 48 25
+- Téléphone (Comores – Moroni) : +269 733 45 09
 - Email : contact@comoresairways.com
 - Réservation : resa@comoresairways.com
+- Siège : Quartier Oazis, Moroni – Union des Comores
 
 Recommandations :
 

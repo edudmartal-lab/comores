@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { FlightCurves } from "@/components/FlightCurves";
 
@@ -5,14 +6,39 @@ type PageHeroProps = {
   eyebrow: string;
   title: string;
   subtitle: string;
+  image?: string;
+  imageAlt?: string;
   children?: ReactNode;
 };
 
-export function PageHero({ eyebrow, title, subtitle, children }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  subtitle,
+  image,
+  imageAlt = "",
+  children
+}: PageHeroProps) {
   return (
     <section className="relative isolate overflow-hidden bg-ca-blue text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_16%,rgba(0,182,199,0.45),transparent_26rem),linear-gradient(120deg,rgba(13,71,161,1),rgba(11,143,102,0.78))]" />
-      <div className="absolute inset-0 bg-warm-grid bg-[length:42px_42px] opacity-20" />
+      {image ? (
+        <>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,31,74,0.88),rgba(13,71,161,0.62)_55%,rgba(11,143,102,0.35))]" />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_16%,rgba(0,182,199,0.45),transparent_26rem),linear-gradient(120deg,rgba(13,71,161,1),rgba(11,143,102,0.78))]" />
+          <div className="absolute inset-0 bg-warm-grid bg-[length:42px_42px] opacity-20" />
+        </>
+      )}
       <div className="site-container relative py-20 md:py-24">
         <p className="font-semibold uppercase tracking-[0.24em] text-white/72">
           {eyebrow}

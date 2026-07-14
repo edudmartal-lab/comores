@@ -15,8 +15,10 @@ export default function DestinationsPage() {
     <>
       <PageHero
         eyebrow="Destinations"
-        title="France, Comores, océan Indien et grands hubs internationaux."
-        subtitle="Les destinations présentées indiquent les demandes les plus fréquentes. Les itinéraires, compagnies et disponibilités sont confirmés après échange."
+        title="France, Comores, océan Indien et grands hubs."
+        subtitle="Les destinations les plus demandées ; itinéraires et disponibilités confirmés après échange."
+        image="/images/hero/hero-lagon.jpg"
+        imageAlt="Vue aérienne d'un lagon turquoise"
       >
         <ButtonLink href="/reservation" variant="green">
           Demander un itinéraire
