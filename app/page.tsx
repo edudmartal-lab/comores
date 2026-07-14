@@ -51,6 +51,30 @@ export default function HomePage() {
         <FlightCurves className="absolute -bottom-9 left-0 right-0 h-28 w-full text-white" />
       </section>
 
+      <section className="bg-white py-20">
+        <div className="site-container">
+          <div className="mb-8 text-center">
+            <p className="font-semibold uppercase tracking-[0.22em] text-ca-green">
+              Découvrir
+            </p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-ca-blue md:text-4xl">
+              Les Comores en vidéo
+            </h2>
+          </div>
+          <div className="mx-auto max-w-4xl overflow-hidden rounded-4xl border border-ca-mist shadow-soft">
+            <iframe
+              className="aspect-video w-full"
+              src="https://www.youtube-nocookie.com/embed/7yFB90Nl-Ic"
+              title="Découvrez les Comores : les îles paradisiaques de l'Afrique de l'Est"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="site-container py-20">
         <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div>
