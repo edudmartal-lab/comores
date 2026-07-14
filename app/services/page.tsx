@@ -15,8 +15,10 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Nos services"
-        title="Des services de voyage pensés pour être compris, suivis et rassurants."
-        subtitle="Comores Airways accompagne les familles, voyageurs, étudiants, pèlerins et professionnels dans leurs démarches de voyage et services aériens."
+        title="Des services de voyage clairs et suivis."
+        subtitle="Pour les familles, les voyageurs, les étudiants, les pèlerins et les professionnels."
+        image="/images/people/aeroport-terminal.jpg"
+        imageAlt="Terminal d'aéroport"
       >
         <ButtonLink href="/reservation" variant="green">
           Demander un devis

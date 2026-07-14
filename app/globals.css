@@ -62,8 +62,3 @@ select {
 .text-balance {
   text-wrap: balance;
 }
-
-/* Photo plein écran derrière le dégradé du hero d'accueil. */
-.hero-photo {
-  object-position: center;
-}

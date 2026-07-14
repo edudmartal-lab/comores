@@ -15,7 +15,9 @@ export default function ReservationPage() {
       <PageHero
         eyebrow="Demande de voyage"
         title="Une demande simple, puis un échange humain."
-        subtitle="Décrivez votre trajet, vos dates et vos besoins. Comores Airways vous répond avec une proposition adaptée, sans fausse réservation instantanée."
+        subtitle="Décrivez votre trajet et vos dates : vous recevez une proposition adaptée."
+        image="/images/destinations/lagon-comores.jpg"
+        imageAlt="Lagon des Comores"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href={CONTACT_LINKS.tel} variant="green">

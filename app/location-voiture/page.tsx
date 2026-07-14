@@ -54,8 +54,10 @@ export default function LocationVoiturePage() {
     <>
       <PageHero
         eyebrow="Oazis · Location & VTC"
-        title="Location de voiture avec chauffeur et transferts aéroport."
-        subtitle="Oazis prolonge l'accompagnement de Comores Airways sur place : un accueil chaleureux, un véhicule prêt et un chauffeur dédié, de Moroni à la France."
+        title="Voiture avec chauffeur et transferts aéroport."
+        subtitle="Un accueil chaleureux, un véhicule prêt et un chauffeur dédié, de Moroni à la France."
+        image="/images/people/dame-voiture.jpg"
+        imageAlt="Voyageuse avec valise près d'un véhicule"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/reservation" variant="green">

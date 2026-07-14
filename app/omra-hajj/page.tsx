@@ -16,7 +16,9 @@ export default function OmraHajjPage() {
       <PageHero
         eyebrow="Omra & Hajj"
         title="Un accompagnement sérieux, clair et respectueux."
-        subtitle="Comores Airways vous accompagne dans l'organisation de vos voyages Omra & Hajj avec sérieux, clarté et attention humaine."
+        subtitle="Une organisation attentive de votre voyage spirituel, du départ au retour."
+        image="/images/destinations/djeddah.jpg"
+        imageAlt="Masjid al-Haram, La Mecque"
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <ButtonLink href="/reservation" variant="green">

@@ -19,19 +19,19 @@ export function Logo({ className = "", invert = false }: LogoProps) {
           width={259}
           height={179}
           priority
-          className="h-11 w-auto"
+          className="h-9 w-auto md:h-11"
         />
       </span>
       <div className="leading-none">
         <p
-          className={`text-xl font-extrabold tracking-[0.02em] ${
+          className={`whitespace-nowrap text-base font-extrabold tracking-[0.02em] md:text-xl ${
             invert ? "text-white" : "text-ca-blue"
           }`}
         >
           COMORES AIRWAYS
         </p>
         <p
-          className={`mt-1 text-sm font-medium ${
+          className={`mt-1 hidden whitespace-nowrap text-sm font-medium sm:block ${
             invert ? "text-white/72" : "text-ca-green"
           }`}
         >
