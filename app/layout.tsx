@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     template: "%s | Comores Airways"
   },
   description:
-    "Billets d'avion, séjours sur mesure, Omra & Hajj, assistance voyage, cargo et services aériens entre la France, les Comores et l'international.",
-  metadataBase: new URL("https://comoresairways.com"),
+    "Transport aérien et services voyages, en partenariat avec les agences de voyages : billets d'avion, séjours sur mesure, Omra & Hajj, assistance voyage et cargo entre la France, les Comores et l'international.",
+  metadataBase: new URL("https://www.comoresairways.com"),
   openGraph: {
     title: "Comores Airways",
     description:

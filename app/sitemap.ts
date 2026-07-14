@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { navItems } from "@/lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://comoresairways.com";
+  const baseUrl = "https://www.comoresairways.com";
 
   return navItems.map((item) => ({
     url: `${baseUrl}${item.href === "/" ? "" : item.href}`,

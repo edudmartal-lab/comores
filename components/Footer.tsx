@@ -11,8 +11,10 @@ export function Footer() {
         <div>
           <Logo invert />
           <p className="mt-5 max-w-md leading-7 text-white/72">
-            Comores Airways accompagne vos voyages entre la France, les Comores
-            et l'international avec clarté, sérieux et proximité.
+            Transport aérien et services voyages, en partenariat avec les
+            agences de voyages : Comores Airways accompagne vos trajets entre
+            la France, les Comores et l'international avec clarté, sérieux et
+            proximité.
           </p>
         </div>
         <nav aria-label="Navigation de pied de page">
@@ -28,6 +30,11 @@ export function Footer() {
         <div>
           <p className="mb-4 font-extrabold">Contact</p>
           <div className="grid gap-2 text-sm text-white/72">
+            {COORDINATES.addresses.map((address) => (
+              <p key={address.label}>
+                {address.label} : {address.value}
+              </p>
+            ))}
             {COORDINATES.phones.map((phone) => (
               <a
                 key={phone.tel}

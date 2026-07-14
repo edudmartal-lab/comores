@@ -1,5 +1,9 @@
 export const ADDRESSES = [
   {
+    label: "Siège – Moroni",
+    value: "Quartier Oazis, Moroni – Union des Comores"
+  },
+  {
     label: "Adresse Paris",
     value: "140 Avenue des Champs-Élysées, 75008 Paris"
   },
@@ -22,6 +26,11 @@ export const COORDINATES = {
       label: "Téléphone (Comores – Moroni)",
       display: "+269 325 48 25",
       tel: "+2693254825"
+    },
+    {
+      label: "Téléphone (Comores – Moroni)",
+      display: "+269 733 45 09",
+      tel: "+2697334509"
     }
   ],
   emails: [

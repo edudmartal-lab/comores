@@ -43,6 +43,7 @@ export default function ReservationPage() {
             {[
               "Demande non engageante",
               "Réponse personnalisée selon les disponibilités",
+              "Traitement via notre système de réservation professionnel (GDS B2B Resaneo)",
               "Possibilité d'échanger par téléphone ou WhatsApp"
             ].map((item) => (
               <div
